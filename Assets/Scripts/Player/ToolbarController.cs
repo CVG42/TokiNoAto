@@ -6,7 +6,7 @@ using System;
 public class ToolbarController : MonoBehaviour
 {
     [SerializeField] int toolbarSize = 8;
-    int selectedTool;
+    public int selectedTool;
 
     public Action<int> onChange;
 

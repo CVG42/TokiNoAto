@@ -48,7 +48,7 @@ public class ToolsController : MonoBehaviour
             UseToolGrid();
         }
 
-        if(Input.GetKeyDown(KeyCode.Z))
+        if(toolbarController.selectedTool == 0)
         {
             hoe.SetActive(true);
             wateringCan.SetActive(false);
@@ -56,7 +56,7 @@ public class ToolsController : MonoBehaviour
             canWater = false;
         }
 
-        if(Input.GetKeyDown(KeyCode.C))
+        if(toolbarController.selectedTool == 2)
         {
             hoe.SetActive(false);
             wateringCan.SetActive(true);
@@ -64,7 +64,7 @@ public class ToolsController : MonoBehaviour
             canWater = true;
         }
 
-        if (Input.GetKeyDown(KeyCode.X))
+        if (toolbarController.selectedTool == 1)
         {
             hoe.SetActive(false);
             wateringCan.SetActive(false);
@@ -126,25 +126,20 @@ public class ToolsController : MonoBehaviour
                 return;
             }
 
-            if(cropsManager.Check(selectedTilePosition))
+            if(cropsManager.Check(selectedTilePosition) && toolbarController.selectedTool == 1)
             {
                 cropsManager.Seed(selectedTilePosition);
                 isSeeded = true;
             }
-            else
+            else if(toolbarController.selectedTool == 0)
             {
                 cropsManager.Plow(selectedTilePosition);
                 isSeeded = false;
             }
 
-            if (isSeeded == true && canWater == true)
+            if (isSeeded == true && canWater == true && toolbarController.selectedTool == 2)
             {
                 cropsManager.WaterSeeded(selectedTilePosition);
-            }
-
-            if (isSeeded == false && canWater == true)
-            {
-                cropsManager.Water(selectedTilePosition);
             }
         }
     }

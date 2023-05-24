@@ -7,10 +7,12 @@ public class ButtonSequence : MonoBehaviour
     public static string playerCode = "";
     public static bool isShooting;
     public static int totalDigits = 0;
+    public PlayerController player;
 
     void Start()
     {
         //isShooting = true;
+        player.speed = 0;
     }
 
     void Update()
@@ -23,6 +25,7 @@ public class ButtonSequence : MonoBehaviour
                 isShooting = false;
                 playerCode = "";
                 totalDigits = 0;
+                player.speed = 3;
             }
             else
             {

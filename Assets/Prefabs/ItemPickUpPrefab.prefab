@@ -124,6 +124,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca7330da5c02fe54ea67f0626947b794, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ttl: 10
+  ttl: 50
   item: {fileID: 11400000, guid: 216cb4bac81e7334088d77c86bcd66be, type: 2}
   count: 1
